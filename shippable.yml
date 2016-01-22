@@ -52,7 +52,7 @@ integrations:
     
 
   hub:
-    - integrationName: "docker-vr"
+    - integrationName: "shippable-docker"
       type: docker
       branches:
         only:
