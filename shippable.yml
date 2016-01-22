@@ -12,12 +12,12 @@ env:
 
  
 build:
- # pre_ci:
-  #  - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
+   pre_ci:
+    - docker build --rm -t=vidyar/phpmongo .
 
   pre_ci_boot:
-    image_name: quay.io/vidyar/postci-img
-    image_tag:  master.13
+    image_name: vidyar/phpmongo
+    image_tag:  latest
     pull: true
     env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -26,9 +26,8 @@ build:
     - ps -eax
     - ls -al
 
- # post_ci:
-  #  - docker push quay.io/vidyar/beta-sample-img-app
-
+  post_ci:
+    - docker push vidyar/phpmongo
   smoke_test:
     - sudo ls /
 
@@ -53,8 +52,8 @@ integrations:
     
 
   hub:
-    - integrationName: "quay-vr"
-      type: quay
+    - integrationName: "docker-vr"
+      type: docker
       branches:
         only:
           - master
