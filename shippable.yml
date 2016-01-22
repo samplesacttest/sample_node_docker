@@ -17,7 +17,7 @@ build:
   #  - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
 
   pre_ci_boot:
-    image_name: shipimg/ubuntu1204_nodejs
+    image_name: vidyar/phpmongo
     image_tag: latest
     pull: true
     env: FOO=BAR
