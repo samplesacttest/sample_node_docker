@@ -16,8 +16,8 @@ build:
   #  - docker build --rm -t=quay.io/vidyar/beta-sample-img-app .
 
   pre_ci_boot:
-    image_name: quay.io/vidyar/beta-sample-img-app
-    image_tag: latest
+    image_name: quay.io/vidyar/postci-img
+    image_tag:  master.13
     pull: true
     env: FOO=BAR
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
