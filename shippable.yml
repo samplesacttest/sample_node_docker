@@ -3,7 +3,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 0.11
+ # - 0.11
 
 env:
   global:
@@ -27,6 +27,8 @@ build:
     - ps -eax
     - ls -al
     - echo $FOO
+    - echo $FO1
+    - echo $BOO
 
   post_ci:
     - docker build --rm -t=shippabledocker/vidya_sample_node2 . 
