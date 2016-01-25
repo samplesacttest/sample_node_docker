@@ -21,7 +21,7 @@ build:
     image_tag:  latest
     pull: true
     env: FOO=BAR
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+    options: '--privileged=true '
 
   ci:
     - ps -eax
