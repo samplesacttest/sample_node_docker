@@ -16,11 +16,11 @@ env:
  
 build:
   pre_ci:
-    - docker build --rm -t=shippabledocker/vidya_sample_node3 .
+    - docker build --rm -t=shippabledocker/vidya_sample_node4 .
 
   pre_ci_boot:
-    image_name: shippabledocker/vidya_sample_node3
-    image_tag:  prod
+    image_name: shippabledocker/vidya_sample_node4
+    image_tag:  latest
     pull: true
     env: FOO=BAR
     options: '--privileged=true '
@@ -31,8 +31,8 @@ build:
     - echo $FO1 and $FO2 and $FOO
 
   post_ci:
-    - docker build --rm -t=shippabledocker/vidya_sample_node3 . 
-    - docker push shippabledocker/vidya_sample_node3
+   # - docker build --rm -t=shippabledocker/vidya_sample_node4 . 
+    - docker push shippabledocker/vidya_sample_node4
   smoke_test:
     - sudo ls /
 
