@@ -7,7 +7,7 @@ node_js:
 
 env:
   global:
-    - FOO=FUBU
+    #- FOO=FUBU
     - FO1=BUBU
     - BOO=GUBU
 
@@ -26,6 +26,7 @@ build:
   ci:
     - ps -eax
     - ls -al
+    - echo $FOO
 
   post_ci:
     - docker build --rm -t=shippabledocker/vidya_sample_node2 . 
