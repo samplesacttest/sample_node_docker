@@ -19,8 +19,8 @@ build:
     - docker build --rm -t=shippabledocker/vidya_sample_node3 .
 
   pre_ci_boot:
-    image_name: drydock/u12nodpls
-    image_tag:  prod
+    image_name: shippabledocker/vidya_sample_node3 
+    image_tag:  latest
     pull: false
     env: FOO=BAR
     options: '--privileged=true '
