@@ -15,13 +15,13 @@ env:
 
  
 build:
-  pre_ci:
-    - docker build --rm -t=shippabledocker/vidya_sample_node3 .
+ # pre_ci:
+  #  - docker build --rm -t=shippabledocker/vidya_sample_node3 .
 
   pre_ci_boot:
-    image_name: shippabledocker/vidya_sample_node3
-    image_tag:  latest
-    pull: false
+    image_name: drydock/u12nodpls
+    image_tag:  prod
+    pull: true
     env: FOO=BAR
     options: '--privileged=true '
 
